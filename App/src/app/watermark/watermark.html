@@ -1,0 +1,28 @@
+<div>
+  <h2>Unsichtbares Wasserzeichen (Encoder / Decoder)</h2>
+
+  <label for="inputText">Text eingeben:</label><br>
+  <textarea id="inputText" [(ngModel)]="inputText" rows="6" cols="60"></textarea>
+
+  <br><br>
+
+  <label for="watermarkText">Wasserzeichen (Text):</label><br>
+  <input id="watermarkText" [(ngModel)]="watermarkText" type="text" size="40">
+
+  <br><br>
+
+  <button (click)="encode()">Wasserzeichen einfügen</button>
+  <button (click)="decode()">Wasserzeichen auslesen</button>
+
+  <br><br>
+
+  <div *ngIf="encodedText">
+    <h3>Mit Wasserzeichen versehener Text:</h3>
+    <textarea rows="6" cols="60" readonly>{{ encodedText }}</textarea>
+  </div>
+
+  <div *ngIf="decodedText">
+    <h3>Ausgelesenes Wasserzeichen:</h3>
+    <p><strong>{{ decodedText }}</strong></p>
+  </div>
+</div>
